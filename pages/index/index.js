@@ -51,7 +51,11 @@ Page({
       hasUserInfo: true
     })
   },
+  //绑定在login按钮上
   login:function(e){
+    //调用wx.login 方法 它会生成一个code
+    //将这个code传递给你的后端代码接口中
+    //用来发送到微信服务器，以便获取openid
     wx.login({
       success: function(res) {
         console.log(res.code)
