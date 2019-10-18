@@ -74,7 +74,28 @@ Page({
       },
       fail: function(res) {},
       complete: function(res) {},
+    })    
+  },
+  //微信账号登录
+  wechatlogin:function(e){
+    //输出你的微信账号信息
+    // console.log(e.detail.userInfo)
+    wx.login({
+      success: function (res){
+        //res的code只存在5分钟
+        console.log(res.code)
+        //临时凭证
+        var code = res.code 
+        wx.request({
+          url: 'http://200.200.3.35:8999/wxLogin?code='+code,
+          method: 'POST',
+          success: function (result) {
+
+            console.log(result)// 服务器回包信息
+
+          }
+        })
+      }
     })
-    
   }
 })

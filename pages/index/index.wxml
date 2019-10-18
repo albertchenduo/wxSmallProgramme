@@ -7,8 +7,20 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-    <button bindtap="login">login</button>
+  <view class="inputView">
+    <label>用户名</label>
+    <input name="username" placeholder="请输入用户名"></input>
+  </view>
+  <view class="inputView">
+    <label>密码</label>
+    <input name="password" password="true" placeholder="请输入密码"></input>
+  </view>
+  <view >
+    <!-- <text class="user-motto">{{motto}}</text> -->
+    <!-- <button bindtap="login">login</button> -->
+    <button bindtap="login">普通登录</button>
+    <!-- 绑定获取微信信息的方法-->
+    <!-- 绑定获取微信信息的方法 getUserInfo获取用户信息，可以从bindgetuserinfo回调中获取到用户信息-->
+    <button bindtap="wxlogin" open-type="getUserInfo" bindgetuserinfo="wechatlogin">微信登录</button>
   </view>
 </view>
