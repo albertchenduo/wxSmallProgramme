@@ -9,11 +9,11 @@
   </view>
   <view class="inputView">
     <label>用户名</label>
-    <input name="username" placeholder="请输入用户名"></input>
+    <input name="userName" placeholder="请输入用户名" bindinput="userNameInput"></input>
   </view>
   <view class="inputView">
     <label>密码</label>
-    <input name="password" password="true" placeholder="请输入密码"></input>
+    <input name="password" password="true" placeholder="请输入密码" bindinput="passwordInput"></input>
   </view>
   <view >
     <!-- <text class="user-motto">{{motto}}</text> -->
@@ -22,5 +22,7 @@
     <!-- 绑定获取微信信息的方法-->
     <!-- 绑定获取微信信息的方法 getUserInfo获取用户信息，可以从bindgetuserinfo回调中获取到用户信息-->
     <button bindtap="wxlogin" open-type="getUserInfo" bindgetuserinfo="wechatlogin">微信登录</button>
+
+    <button bindtap="addUser">注册</button>
   </view>
 </view>
